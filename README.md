@@ -19,6 +19,4 @@ PHP: Používá se pro jednoduchý backend skript zajišťující simulaci odesl
 Lokální spuštění
 Klonování: Naklonujte repozitář.
 
-Webový server: Vzhledem k použití AJAX požadavků a PHP pro formulář je nezbytné spustit projekt přes lokální webový server (doporučuje se XAMPP, MAMP, nebo Live Server ve VS Code).
-
-Prohlížeč: Otevřete aplikaci na adrese lokálního serveru (např. http://localhost/lol-champion-codex/).
+Webový server: Vzhledem k použití AJAX požadavků a PHP pro formulář je nezbytné spustit projekt přes lokální webový server (doporučuje se XAMPP, MAMP, nebo Live Server ve VS Code)
