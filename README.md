@@ -1,22 +1,52 @@
+
 # League of Legends: Champion Codex
 
+Alexandr Šoška
 
-# Přehled projektu a cíle
-Koncept
-Projekt představuje interaktivní a plně responzivní katalog šampionů (Champion Roster) z populární MOBA hry League of Legends (LoL). Web má podobu one-page aplikace, kde se veškeré informace o šampionech načítají dynamicky. Hlavním technickým cílem je demonstrace efektivní práce s AJAXem (Fetch API) pro načítání dat a následná filtrace obsahu na straně klienta.
+# Stručný popis tématu
+Webová prezentace sloužící jako interaktivní one-page katalog šampionů z populární hry League of Legends. Stránka bude mít podobu one-page webu s několika sekcemi, které představí role, informace o šampionech a základní mechaniky hry. Obsah bude z velké části načítán dynamicky z JSON souborů pomocí AJAXu. Cílem projektu je vytvořit moderní, přehledný a responzivní web se zaměřením na práci s daty a jednoduchou serverovou komunikaci.
 
-# Technické specifikace
-Použité technologie
-HTML5, CSS3, Vanilla JavaScript: Základní technologie pro strukturu, styly a aplikační logiku.
+# Cílová skupina
+Hráči League of Legends, návštěvníci hledající informace o rolích šampionů a lidé, kteří se chtějí seznámit s rozsáhlým rosterem hry.
 
-JSON: Datový formát pro ukládání informací o šampionech (champions.json).
+# Návrh obsahových sekcí
+O nás: Základní představení projektu (kodexu) a jeho filozofie.
 
-AJAX (Fetch API): Používá se pro asynchronní získání dat ze souboru champions.json.
+Plemeno Shiba-Inu (Role šampionů): Charakteristika hlavních rolí (Mage, Tank, Marksman), povaha a nároky v týmu.
 
-PHP: Používá se pro jednoduchý backend skript zajišťující simulaci odeslání kontaktního formuláře.
+Nabídka štěňat (Roster šampionů): Dynamicky načítaný seznam šampionů s fotografiemi a popisy, s možností filtrace podle role.
 
-# Spuštění a nasazení
-Lokální spuštění
-Klonování: Naklonujte repozitář.
+Podmínky prodeje (Herní mechaniky): Informace pro nové hráče, pravidla hry a základní principy.
 
-Webový server: Vzhledem k použití AJAX požadavků a PHP pro formulář je nezbytné spustit projekt přes lokální webový server (doporučuje se XAMPP, MAMP, nebo Live Server ve VS Code)
+Kontakt: Adresa, telefon, e-mail + jednoduchý kontaktní formulář.
+
+# Návrh designu
+Barevné ladění: Tmavé, kontrastní herní barvy (tmavě modrá, zlatá, azurová).
+
+Uspořádání: Přehledné blokové uspořádání sekcí pod sebou.
+
+Karty šampionů: Karty šampionů v gridu (více sloupců podle šířky obrazovky).
+
+UI: Jednoduché a čitelné uživatelské rozhraní, moderní prvky.
+
+# Použité technologie
+Frontend: HTML, CSS nebo Tailwind CSS, JavaScript
+
+Data: JSON soubory pro textové sekce a katalog šampionů
+
+AJAX: Načítání obsahu sekcí a seznamu šampionů
+
+Backend: Jednoduchý PHP endpoint pro odeslání kontaktního formuláře
+
+Verzování: Git + GitHub (repozitář dostupný vyučujícímu)
+
+# Očekávaný přínos
+Práce s JSON a strukturovanými daty
+
+Načítání dat pomocí AJAX a dynamické vkládání obsahu
+
+Tvorba responzivního designu
+
+Základní formulářová komunikace se serverem
+
+Organizace projektu ve složkách, verzování přes GitHub
