@@ -10,15 +10,15 @@ Webová prezentace sloužící jako interaktivní one-page katalog šampionů z 
 Hráči League of Legends, návštěvníci hledající informace o rolích šampionů a lidé, kteří se chtějí seznámit s rozsáhlým rosterem hry.
 
 # Návrh obsahových sekcí
-O nás: Základní představení projektu (kodexu) a jeho filozofie.
+1. Sekce "Co je League of Legends?"
 
-Plemeno Shiba-Inu (Role šampionů): Charakteristika hlavních rolí (Mage, Tank, Marksman), povaha a nároky v týmu.
+Účel: Stručné představení hry pro nováčky.
 
-Nabídka štěňat (Roster šampionů): Dynamicky načítaný seznam šampionů s fotografiemi a popisy, s možností filtrace podle role.
+Obsah (Načítáno z JSON):
 
-Podmínky prodeje (Herní mechaniky): Informace pro nové hráče, pravidla hry a základní principy.
+Základní princip hry (MOBA 5v5, cíl zničit Nexus).
 
-Kontakt: Adresa, telefon, e-mail + jednoduchý kontaktní formulář.
+Zmínka o strategické hloubce.
 
 # Návrh designu
 Barevné ladění: Tmavé, kontrastní herní barvy (tmavě modrá, zlatá, azurová).
