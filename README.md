@@ -1,15 +1,24 @@
-# Minecraft: Block Codex
-Tento soubor obsahuje informace o projektu Minecraft: Block Codex – one-page webové referenci zaměřené na klíčové bloky a bytosti ze světa Minecraftu.
+# League of Legends: Champion Codex
 
-# Přehled projektu
-Projekt Minecraft: Block Codex je moderní, plně responzivní webová stránka, která slouží jako interaktivní a přehledný katalog základních herních prvků. Vizuální styl je inspirován pixel-artovou estetikou hry. Hlavním technickým cílem je demonstrace efektivní práce s AJAXem a JSON daty pro dynamické generování obsahu a filtrování.
 
-# Cíle
-Vytvořit esteticky příjemný web, který připomíná uživatelské rozhraní hry Minecraft.
+# Přehled projektu a cíle
+Koncept
+Projekt představuje interaktivní a plně responzivní katalog šampionů (Champion Roster) z populární MOBA hry League of Legends (LoL). Web má podobu one-page aplikace, kde se veškeré informace o šampionech načítají dynamicky. Hlavním technickým cílem je demonstrace efektivní práce s AJAXem (Fetch API) pro načítání dat a následná filtrace obsahu na straně klienta.
 
-Demonstrovat asynchronní načítání a zpracování dat pomocí Vanilla JavaScriptu (AJAX/Fetch API).
+# Technické specifikace
+Použité technologie
+HTML5, CSS3, Vanilla JavaScript: Základní technologie pro strukturu, styly a aplikační logiku.
 
-Implementovat funkční filtrování a kategorizaci obsahu (bloků) bez nutnosti načítat stránku znovu.
+JSON: Datový formát pro ukládání informací o šampionech (champions.json).
 
-Zajistit plnou responzivní, aby byl kodex dobře čitelný na PC i mobilních zařízeních.
+AJAX (Fetch API): Používá se pro asynchronní získání dat ze souboru champions.json.
 
+PHP: Používá se pro jednoduchý backend skript zajišťující simulaci odeslání kontaktního formuláře.
+
+# Spuštění a nasazení
+Lokální spuštění
+Klonování: Naklonujte repozitář.
+
+Webový server: Vzhledem k použití AJAX požadavků a PHP pro formulář je nezbytné spustit projekt přes lokální webový server (doporučuje se XAMPP, MAMP, nebo Live Server ve VS Code).
+
+Prohlížeč: Otevřete aplikaci na adrese lokálního serveru (např. http://localhost/lol-champion-codex/).
