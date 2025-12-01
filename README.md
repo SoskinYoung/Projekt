@@ -1,9 +1,15 @@
-# Hotline Miami 2: Wrong Number
+#Minecraft: Block Codex
+Tento soubor obsahuje informace o projektu Minecraft: Block Codex – one-page webové referenci zaměřené na klíčové bloky a bytosti ze světa Minecraftu.
 
-Děj a Příběh: Děj se odehrává před, během a hlavně po událostech prvního dílu. Rozplétá se komplexní mozaika příběhů mnoha postav, které jsou ovlivněny Jacketovými činy. Příběh zkoumá témata sebe-destrukce, posedlosti násilím a důsledků války.
+#Přehled projektu
+Projekt Minecraft: Block Codex je moderní, plně responzivní webová stránka, která slouží jako interaktivní a přehledný katalog základních herních prvků. Vizuální styl je inspirován pixel-artovou estetikou hry. Hlavním technickým cílem je demonstrace efektivní práce s AJAXem a JSON daty pro dynamické generování obsahu a filtrování.
 
-Hratelné Postavy: Hra představuje několik hratelných frakcí a jednotlivců, z nichž každý má jedinečné mechaniky a motivace (např. The Fans s maskami, The Writer který nechce zabíjet střelnými zbraněmi, nebo The Soldier s omezeným vybavením).
+#Cíle
+Vytvořit esteticky příjemný web, který připomíná uživatelské rozhraní hry Minecraft.
 
-Větší Mapy a Obtížnost: Levely jsou často rozlehlejší a otevřenější než v prvním díle, což klade větší důraz na plánování a činí hru náročnější, protože nepřátelé mohou střílet zpoza obrazovky.
+Demonstrovat asynchronní načítání a zpracování dat pomocí Vanilla JavaScriptu (AJAX/Fetch API).
 
-Soundtrack: Opět obsahuje prvotřídní elektronickou hudbu od umělců jako M.O.O.N., Carpenter Brut, Perturbator a dalších, která dokonale podtrhuje adrenalinový herní zážitek.
+Implementovat funkční filtrování a kategorizaci obsahu (bloků) bez nutnosti načítat stránku znovu.
+
+Zajistit plnou responzivní, aby byl kodex dobře čitelný na PC i mobilních zařízeních.
+
