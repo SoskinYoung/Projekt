@@ -1,6 +1,4 @@
-// script.js - Load JSON data and populate the page
 
-// Utility function to create an element with optional class and innerHTML
 function createElement(tag, className, html) {
   const el = document.createElement(tag);
   if (className) el.className = className;
@@ -8,7 +6,6 @@ function createElement(tag, className, html) {
   return el;
 }
 
-// Load intro section
 fetch('data/intro.json')
   .then((res) => res.json())
   .then((data) => {
@@ -20,7 +17,6 @@ fetch('data/intro.json')
   })
   .catch((err) => console.error('Failed to load intro JSON:', err));
 
-// Load champion catalog
 fetch('data/champions.json')
   .then((res) => res.json())
   .then((champions) => {
@@ -42,7 +38,6 @@ fetch('data/champions.json')
       body.appendChild(desc);
       card.appendChild(body);
 
-      // Simple click interaction – show alert with full description
       card.addEventListener('click', () => {
         alert(`${champ.name}\n\n${champ.fullDescription}`);
       });
@@ -51,3 +46,4 @@ fetch('data/champions.json')
     });
   })
   .catch((err) => console.error('Failed to load champions JSON:', err));
+
