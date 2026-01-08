@@ -1,10 +1,4 @@
-/* ------------------------------------------------------------
-   League of Legends: Champion Codex – Premium Dark Theme
-   Colors: Dark Blue (#0a0f2c), Gold (#ffd700), Azure (#00bfff)
-   Font: Inter (imported in HTML)
-   ------------------------------------------------------------ */
 
-/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -25,9 +19,6 @@ body {
   flex-direction: column;
 }
 
-/* ------------------------------------------------------------
-   Layout – Header & Navigation
-   ------------------------------------------------------------ */
 .site-header {
   background: rgba(10, 15, 44, 0.85);
   backdrop-filter: blur(10px);
@@ -87,9 +78,7 @@ body {
   transform: scaleX(1);
 }
 
-/* ------------------------------------------------------------
-   Sections
-   ------------------------------------------------------------ */
+
 .section {
   padding: 4rem 2rem;
   max-width: 1200px;
@@ -104,7 +93,7 @@ body {
   text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
 }
 
-/* Intro & Roles – glassmorphism panels */
+
 .section-content {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
@@ -137,7 +126,7 @@ body {
   line-height: 1.7;
 }
 
-/* Modes Section */
+
 .modes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -179,7 +168,7 @@ body {
   color: #e0e0e0;
 }
 
-/* Spells Section */
+
 .spells-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -229,7 +218,7 @@ body {
   line-height: 1.4;
 }
 
-/* Inventory Builder */
+
 .build-helper {
   text-align: center;
   margin-bottom: 2rem;
@@ -297,7 +286,7 @@ body {
   transform: scale(1.1);
 }
 
-/* Items Section */
+
 .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -311,7 +300,7 @@ body {
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
-  /* changed to pointer */
+
   position: relative;
 }
 
@@ -357,7 +346,7 @@ body {
   width: 48px;
   height: 48px;
   background: #333;
-  /* Placeholder for image */
+  
   border: 2px solid #a07fa0;
   border-radius: 4px;
 }
@@ -395,7 +384,7 @@ body {
   line-height: 1.4;
 }
 
-/* Regions Section */
+
 .regions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -511,7 +500,6 @@ body {
 
 
 
-/* Filters */
 .filters {
   display: flex;
   flex-direction: column;
@@ -621,7 +609,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4);
 }
 
-/* Champion Grid */
+
 .champion-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -646,7 +634,7 @@ body {
   border-color: #ffd700;
 }
 
-/* Favorite Icon */
+
 .fav-btn {
   position: absolute;
   top: 10px;
@@ -688,7 +676,7 @@ body {
   border-color: #ff4d4d;
 }
 
-/* Champion Grid Images */
+
 .card-image-container {
   width: 100%;
   height: 200px;
@@ -703,14 +691,13 @@ body {
   object-fit: cover;
   transition: transform 0.5s ease;
   display: block;
-  /* Ensures no gap */
 }
 
 .champion-card:hover img {
   transform: scale(1.05);
 }
 
-/* Fallback for missing images */
+
 .placeholder-icon {
   display: none;
   position: absolute;
@@ -792,9 +779,7 @@ body {
   padding-top: 0.8rem;
 }
 
-/* Footer */
 
-/* Hero Banner */
 .hero {
   position: relative;
   height: 80vh;
@@ -872,7 +857,6 @@ body {
   gap: 1rem;
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
@@ -913,7 +897,7 @@ body {
   }
 }
 
-/* Back to Top Button */
+
 #back-to-top {
   position: fixed;
   bottom: 30px;
@@ -938,9 +922,7 @@ body {
   visibility: visible;
 }
 
-/* ------------------------------------------------------------
-   Quiz Section
-   ------------------------------------------------------------ */
+
 .quiz-section {
   text-align: center;
 }
@@ -1030,9 +1012,7 @@ body {
   color: #0a0f2c;
 }
 
-/* ------------------------------------------------------------
-   Contact Section
-   ------------------------------------------------------------ */
+
 .contact-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -1073,7 +1053,7 @@ body {
   font-size: 1.5rem;
 }
 
-/* Form Styles */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -1147,8 +1127,7 @@ body {
   color: #ff4d4d;
 }
 
-/* End of Hero and UI enhancements */
-/* Footer */
+
 .site-footer {
   margin-top: auto;
   background: #05081a;
@@ -1228,9 +1207,7 @@ body {
   font-size: 0.85rem;
 }
 
-/* ------------------------------------------------------------
-   Micro‑animations – fade‑in on scroll
-   ------------------------------------------------------------ */
+
 [data-fade] {
   opacity: 0;
   transform: translateY(20px);
@@ -1242,9 +1219,7 @@ body {
   transform: translateY(0);
 }
 
-/* ------------------------------------------------------------
-   Loading Skeletons
-   ------------------------------------------------------------ */
+
 .skeleton {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
@@ -1290,12 +1265,10 @@ body {
   height: 300px;
 }
 
-/* ------------------------------------------------------------
-   Modal / Lightbox
-   ------------------------------------------------------------ */
+
 .modal {
   display: none;
-  /* Hidden by default */
+  
   position: fixed;
   inset: 0;
   z-index: 2000;
@@ -1336,9 +1309,7 @@ body {
   flex-direction: column;
 }
 
-/* ------------------------------------------------------------
-   Music Player Widget
-   ------------------------------------------------------------ */
+
 .music-player {
   position: fixed;
   bottom: 20px;
@@ -1390,7 +1361,6 @@ body {
   color: #00bfff;
 }
 
-/* Sound visualizer bars animation */
 .bars {
   display: flex;
   gap: 3px;
@@ -1463,7 +1433,6 @@ body {
   .modal-body {
     flex-direction: row;
     height: 100%;
-    /* Fixed height for landscape modal on larger screens closer to image aspect ratio */
     min-height: 500px;
   }
 }
@@ -1512,7 +1481,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* Changed from cover to contain to show full image */
   display: block;
 }
 
@@ -1550,7 +1518,6 @@ body {
   padding-right: 10px;
 }
 
-/* Custom scrollbar for modal text */
 .modal-desc-container::-webkit-scrollbar {
   width: 6px;
 }
@@ -1584,4 +1551,5 @@ body {
   100% {
     transform: translateX(0);
   }
+
 }
