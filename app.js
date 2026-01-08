@@ -1,10 +1,6 @@
-// app.js – Load JSON data and populate the page
-// This script assumes the site is served via a local server (e.g., `npx -y serve .`)
 
-// Utility: fetch JSON and handle errors
 async function loadJSON(path) {
-  // Artificial delay to show off skeletons (remove in production)
-  // await new Promise(r => setTimeout(r, 1000)); 
+
 
   const response = await fetch(path);
   if (!response.ok) {
@@ -14,7 +10,6 @@ async function loadJSON(path) {
   return response.json();
 }
 
-// Skeleton Loader
 function showSkeleton(containerId, itemClass, count = 3) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -26,10 +21,8 @@ function showSkeleton(containerId, itemClass, count = 3) {
   container.innerHTML = skeletons;
 }
 
-// Populate Intro Section
 async function populateIntro() {
   const containerId = 'intro-content';
-  // Intro works a bit differently, custom skeleton or skip
 
   const data = await loadJSON('data/intro.json');
   if (!data) return;
@@ -47,7 +40,6 @@ async function populateIntro() {
   }
 }
 
-// Populate Roles Section
 async function populateRoles() {
   showSkeleton('roles-content', 'role-card', 4);
   const data = await loadJSON('data/roles.json');
@@ -62,7 +54,6 @@ async function populateRoles() {
   container.innerHTML = html;
 }
 
-// Populate Modes Section
 async function populateModes() {
   showSkeleton('modes-content', 'mode-card', 3);
   const data = await loadJSON('data/modes.json');
@@ -77,7 +68,6 @@ async function populateModes() {
   `).join('');
 }
 
-// Populate Spells Section
 async function populateSpells() {
   showSkeleton('spells-content', 'spell-card', 2);
   const data = await loadJSON('data/spells.json');
@@ -94,18 +84,13 @@ async function populateSpells() {
   `).join('');
 }
 
-// Populate Regions Section
 async function populateRegions() {
-  showSkeleton('regions-content', 'region-card', 6); // Note: Regions grid structure handled in HTML now? No, JS wrapped.
-  // We need to match the structure manually or just let grid handle children
-  // The current JS wraps it in .regions-grid div. Let's fix that.
+  showSkeleton('regions-content', 'region-card', 6); 
 
   const data = await loadJSON('data/regions.json');
   if (!data) return;
   const container = document.getElementById('regions-content');
 
-  // Update: Using grid directly in CSS on #regions-content would be better, but let's stick to current logic
-  // Just for skeleton, we will overwrite.
 
   container.innerHTML = `<div class="regions-grid">` + data.regions.map(region => `
     <div class="region-card" data-fade>
@@ -115,7 +100,6 @@ async function populateRegions() {
   `).join('') + `</div>`;
 }
 
-// Favorites Logic
 function getFavorites() {
   const saved = localStorage.getItem('lol-favorites');
   return saved ? JSON.parse(saved) : [];
@@ -130,17 +114,15 @@ function toggleFavorite(name) {
     favs.splice(index, 1);
   }
   localStorage.setItem('lol-favorites', JSON.stringify(favs));
-  return index === -1; // returns true if added
+  return index === -1; 
 }
 
-// Populate Champion Grid with Favorites
 async function populateChampions() {
   showSkeleton('champion-grid', 'champion-card', 8);
   const data = await loadJSON('data/champions.json');
   if (!data) return;
   const grid = document.getElementById('champion-grid');
 
-  // Save data globally for filtering
   window.allChampionsData = data.champions;
 
   renderChampionsGrid(data.champions);
@@ -154,10 +136,8 @@ function renderChampionsGrid(champions) {
   const html = champions.map(champ => {
     const isFav = favorites.includes(champ.name);
     const favClass = isFav ? 'active' : '';
-    // Generate fallback helper
     const fallbackImage = `this.onerror=null;this.parentElement.classList.add('no-image');this.style.display='none';`;
 
-    // Check if in comparison
     const isInCompare = comparisonList.includes(champ.name);
     const compareClass = isInCompare ? 'active' : '';
 
@@ -194,17 +174,16 @@ function renderChampionsGrid(champions) {
     grid.innerHTML = html;
   }
 
-  // Add listeners for Fav and Compare buttons
   grid.querySelectorAll('.fav-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Don't open modal
+      e.stopPropagation(); 
       const card = btn.closest('.champion-card');
       const name = card.dataset.name;
       const added = toggleFavorite(name);
 
       if (added) {
         btn.classList.add('active');
-        playSound('success'); // if exists or generic
+        playSound('success'); 
       } else {
         btn.classList.remove('active');
         const currentFilter = document.querySelector('.filter-btn.active')?.dataset.filter;
@@ -226,16 +205,14 @@ function renderChampionsGrid(champions) {
   });
 }
 
-// Comparator Logic
-let comparisonList = []; // stores names
-let comparisonImages = {}; // stores name -> url
+let comparisonList = []; 
+let comparisonImages = {}; 
 
 function toggleCompare(name, image) {
   const index = comparisonList.indexOf(name);
 
   if (index === -1) {
     if (comparisonList.length >= 2) {
-      // Replace the second one (FIFO style or just block? Let's Shift)
       comparisonList.shift();
     }
     comparisonList.push(name);
@@ -245,8 +222,6 @@ function toggleCompare(name, image) {
   }
 
   updateComparatorUI();
-  // Re-render grid icons (a bit heavy but safe, or just toggle class)
-  // Optimization: just toggle class
   document.querySelectorAll('.champion-card').forEach(card => {
     const btn = card.querySelector('.compare-btn');
     if (card.dataset.name === name) {
@@ -271,7 +246,6 @@ function updateComparatorUI() {
     widget.classList.remove('active');
   }
 
-  // Slot 1
   if (comparisonList[0]) {
     slot1.classList.add('filled');
     slot1.innerHTML = `<img src="${comparisonImages[comparisonList[0]]}">`;
@@ -280,7 +254,6 @@ function updateComparatorUI() {
     slot1.innerHTML = '?';
   }
 
-  // Slot 2
   if (comparisonList[1]) {
     slot2.classList.add('filled');
     slot2.innerHTML = `<img src="${comparisonImages[comparisonList[1]]}">`;
@@ -302,7 +275,7 @@ function initComparator() {
   document.getElementById('clear-compare').addEventListener('click', () => {
     comparisonList = [];
     updateComparatorUI();
-    window.applyAppFilters(); // Re-render to clear icons
+    window.applyAppFilters(); 
   });
 
   document.getElementById('trigger-compare').addEventListener('click', () => {
@@ -311,8 +284,6 @@ function initComparator() {
     }
   });
 
-  // Close modal logic for compare-modal is missing in general closing logic
-  // Add it here
   const modal = document.getElementById('compare-modal');
   modal.querySelector('.close-btn').addEventListener('click', () => {
     modal.classList.remove('active');
@@ -323,8 +294,6 @@ function initComparator() {
 }
 
 function getStatsByRole(role) {
-  // Mock stats based on role for visualization
-  // Attack, Defense, Magic, Difficulty (randomized slightly)
   const base = {
     'Bojovník': { atk: 80, def: 60, mag: 20 },
     'Mág': { atk: 30, def: 30, mag: 95 },
@@ -335,7 +304,6 @@ function getStatsByRole(role) {
   };
 
   const stats = base[role] || { atk: 50, def: 50, mag: 50 };
-  // Add variance
   return {
     atk: Math.min(100, stats.atk + Math.floor(Math.random() * 10)),
     def: Math.min(100, stats.def + Math.floor(Math.random() * 10)),
@@ -388,22 +356,19 @@ function openCompareModal(name1, name2) {
 
 
 
-// Filter Logic
-let currentRegionFilter = null; // Global state for region
+let currentRegionFilter = null; 
 
 function initFilters(allChampions) {
   const searchInput = document.getElementById('search-input');
   const suggestionsBox = document.getElementById('search-suggestions');
   const filterBtns = document.querySelectorAll('.filter-btn');
-  let currentFilter = 'all'; // Role filter
+  let currentFilter = 'all'; 
   let currentSearch = '';
 
-  // Expose applyFilters globally or helper
   window.applyAppFilters = () => {
     const favorites = getFavorites();
 
     const filtered = allChampions.filter(champ => {
-      // 1. Role Filter
       let matchesRole = false;
       if (currentFilter === 'all') {
         matchesRole = true;
@@ -413,13 +378,10 @@ function initFilters(allChampions) {
         matchesRole = champ.role === currentFilter;
       }
 
-      // 2. Search Filter
       const matchesSearch = champ.name.toLowerCase().includes(currentSearch);
 
-      // 3. Region Filter
       let matchesRegion = true;
       if (currentRegionFilter) {
-        // Handle complex regions like "Piltover & Zaun"
         if (currentRegionFilter.includes('&')) {
           const parts = currentRegionFilter.split('&').map(s => s.trim());
           matchesRegion = parts.includes(champ.region);
@@ -433,7 +395,6 @@ function initFilters(allChampions) {
 
     renderChampionsGrid(filtered);
 
-    // Update UI status for region
     const existingStatus = document.getElementById('region-filter-status');
     if (currentRegionFilter) {
       if (!existingStatus) {
@@ -459,14 +420,12 @@ function initFilters(allChampions) {
     }
   };
 
-  // Event Listeners
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       const val = e.target.value.toLowerCase();
       currentSearch = val;
       window.applyAppFilters();
 
-      // Suggestions Logic
       if (val.length > 0) {
         const matches = allChampions.filter(c => c.name.toLowerCase().startsWith(val)).slice(0, 5);
         if (matches.length > 0) {
@@ -478,7 +437,6 @@ function initFilters(allChampions) {
               `).join('');
           suggestionsBox.classList.add('active');
 
-          // Click on suggestion
           suggestionsBox.querySelectorAll('.suggestion-item').forEach(item => {
             item.addEventListener('click', () => {
               searchInput.value = item.dataset.name;
@@ -495,7 +453,6 @@ function initFilters(allChampions) {
       }
     });
 
-    // Hide suggestions on click outside
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.search-container')) {
         suggestionsBox.classList.remove('active');
@@ -517,7 +474,6 @@ function initFilters(allChampions) {
 }
 
 
-// Simple scroll‑fade observer
 function initScrollFade() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -530,21 +486,18 @@ function initScrollFade() {
   document.querySelectorAll('[data-fade]').forEach(el => observer.observe(el));
 }
 
-// Modal Logic
 function initModal() {
   const modal = document.getElementById('champion-modal');
   const closeBtn = document.querySelector('.close-btn');
   const overlay = document.querySelector('.modal-overlay');
   const grid = document.getElementById('champion-grid');
 
-  // Elements to populate
   const modalImg = document.getElementById('modal-image');
   const modalName = document.getElementById('modal-name');
   const modalTitle = document.getElementById('modal-title');
   const modalBadges = document.getElementById('modal-badges');
   const modalDesc = document.getElementById('modal-desc');
 
-  // Skin controls
   const prevSkin = document.getElementById('prev-skin');
   const nextSkin = document.getElementById('next-skin');
   const skinLabel = document.getElementById('skin-name');
@@ -569,7 +522,6 @@ function initModal() {
     }
   }
 
-  // Handle image load error
   modalImg.onerror = () => {
     if (currentSkinIndex > 0) {
       console.log(`Skin ${currentSkinIndex} not found, reverting`);
@@ -578,7 +530,6 @@ function initModal() {
     }
   };
 
-  // Open Modal
   grid.addEventListener('click', (e) => {
     const card = e.target.closest('.champion-card');
     if (!card) return;
@@ -603,7 +554,6 @@ function initModal() {
     document.body.style.overflow = 'hidden';
   });
 
-  // Buttons
   if (prevSkin) {
     prevSkin.addEventListener('click', () => {
       if (currentSkinIndex > 0) {
@@ -620,7 +570,6 @@ function initModal() {
     });
   }
 
-  // Close Logic
   const closeModal = () => {
     modal.classList.remove('active');
     document.body.style.overflow = '';
@@ -637,7 +586,6 @@ function initModal() {
   });
 }
 
-// Contact Form Logic
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
@@ -649,13 +597,11 @@ function initContactForm() {
       const btn = form.querySelector('.submit-btn');
       const originalText = btn.textContent;
 
-      // Simulate loading
       btn.textContent = 'Odesílání...';
       btn.disabled = true;
       btn.style.opacity = '0.7';
 
       setTimeout(() => {
-        // Simulate success
         status.textContent = 'Zpráva úspěšně odeslána! Brzy se ozveme.';
         status.className = 'form-status success';
         form.reset();
@@ -664,7 +610,6 @@ function initContactForm() {
         btn.disabled = false;
         btn.style.opacity = '1';
 
-        // Clear status after 5 seconds
         setTimeout(() => {
           status.textContent = '';
           status.className = 'form-status';
@@ -674,7 +619,6 @@ function initContactForm() {
   }
 }
 
-// Quiz Logic
 async function initQuiz() {
   const container = document.getElementById('quiz-container');
   const startBtn = document.getElementById('start-quiz-btn');
@@ -684,7 +628,7 @@ async function initQuiz() {
   if (!quizData) return;
 
   let currentQuestionIndex = 0;
-  let scores = {}; // role -> score
+  let scores = {}; 
 
   startBtn.addEventListener('click', () => {
     renderQuestion();
@@ -708,9 +652,7 @@ async function initQuiz() {
       </div>
     `;
 
-    // Add listeners to new buttons
     const item = container.querySelector('.quiz-question');
-    // Force fade in
     setTimeout(() => item.classList.add('visible'), 10);
 
     container.querySelectorAll('.answer-btn').forEach(btn => {
@@ -724,8 +666,7 @@ async function initQuiz() {
   }
 
   function showResult() {
-    // Determine winner
-    let winnerRole = 'Bojovník'; // default
+    let winnerRole = 'Bojovník'; 
     let maxScore = -1;
 
     for (const [role, score] of Object.entries(scores)) {
@@ -760,7 +701,6 @@ function initRandomChamp() {
 
     const randomChamp = window.allChampionsData[Math.floor(Math.random() * window.allChampionsData.length)];
 
-    // Open modal directly
     const modal = document.getElementById('champion-modal');
     const modalImg = document.getElementById('modal-image');
     const modalName = document.getElementById('modal-name');
@@ -773,7 +713,6 @@ function initRandomChamp() {
     modalName.textContent = randomChamp.name;
     modalTitle.textContent = randomChamp.title;
 
-    // Construct badges HTML manually since we have raw data
     modalBadges.innerHTML = `
       <span class="badge" data-type="role">${randomChamp.role}</span>
       <span class="badge" data-type="difficulty">${randomChamp.difficulty} Obtížnost</span>
@@ -795,7 +734,6 @@ function initMusicPlayer() {
 
   if (!audio || !player || !btn) return;
 
-  // Set initial volume low
   audio.volume = 0.3;
 
   btn.addEventListener('click', () => {
@@ -817,7 +755,6 @@ function initMusicPlayer() {
   });
 }
 
-// Inventory Logic
 let currentBuild = [null, null, null, null, null, null];
 
 function updateInventoryUI() {
@@ -829,12 +766,10 @@ function updateInventoryUI() {
 
     if (item) {
       slot.classList.add('filled');
-      // We stored the image URL in the array
       const img = document.createElement('img');
       img.src = item;
       slot.appendChild(img);
 
-      // Remove on click
       slot.onclick = () => {
         currentBuild[index] = null;
         updateInventoryUI();
@@ -846,20 +781,17 @@ function updateInventoryUI() {
 }
 
 function addToBuild(itemImage) {
-  // Find first empty slot
   const emptyIndex = currentBuild.indexOf(null);
   if (emptyIndex !== -1) {
     currentBuild[emptyIndex] = itemImage;
     updateInventoryUI();
   } else {
-    // Inventory full feedback
     const inventory = document.querySelector('.inventory-slots');
     inventory.style.animation = 'shake 0.5s';
     setTimeout(() => inventory.style.animation = '', 500);
   }
 }
 
-// Populate Items Section
 async function populateItems() {
   showSkeleton('items-content', 'item-card', 6);
   const data = await loadJSON('data/items.json');
@@ -885,14 +817,12 @@ async function populateItems() {
     </div>
   `).join('');
 
-  // Add click listeners
   container.querySelectorAll('.item-card').forEach(card => {
     card.addEventListener('click', () => {
       addToBuild(card.dataset.image);
     });
   });
 
-  // Clear button logic
   const clearBtn = document.getElementById('clear-build');
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
@@ -904,9 +834,7 @@ async function populateItems() {
 
 
 
-// Populate Items Section Ends
 
-// UI Sounds using AudioContext
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
@@ -943,7 +871,6 @@ function playSound(type) {
 }
 
 function initSounds() {
-  // Add sounds to buttons and cards
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest('button') || e.target.closest('a') || e.target.closest('.champion-card') || e.target.closest('.item-card') || e.target.closest('.region-card') || e.target.closest('.inv-slot.filled')) {
       playSound('hover');
@@ -957,7 +884,6 @@ function initSounds() {
   });
 }
 
-// Initialize everything
 async function init() {
   await Promise.all([populateIntro(), populateModes(), populateSpells(), populateItems(), populateRoles(), populateRegions(), populateChampions()]);
   initScrollFade();
@@ -971,7 +897,6 @@ async function init() {
   initComparator();
 }
 
-// Easter Egg: Konami Code
 function initEasterEgg() {
   const code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
   let cursor = 0;
@@ -1004,7 +929,6 @@ function activateUrfMode() {
   `;
   document.head.appendChild(style);
 
-  // Speed up all animations
   document.querySelectorAll('*').forEach(el => {
     el.style.transitionDuration = '0.1s';
   });
@@ -1012,10 +936,8 @@ function activateUrfMode() {
 
 document.addEventListener('DOMContentLoaded', init);
 
-// Back‑to‑top button logic
 const backToTopBtn = document.getElementById('back-to-top');
 if (backToTopBtn) {
-  // Show/hide on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
       backToTopBtn.classList.add('visible');
@@ -1023,10 +945,10 @@ if (backToTopBtn) {
       backToTopBtn.classList.remove('visible');
     }
   });
-  // Click scroll to top
   backToTopBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
 
