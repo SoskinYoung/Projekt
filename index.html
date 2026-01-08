@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>League of Legends: Kodex Šampionů</title>
+    <meta name="description"
+        content="Interaktivní katalog šampionů League of Legends s rolemi a herními mechanikami." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav-bar">
+            <h1 class="logo">Kodex Šampionů</h1>
+            <ul class="nav-links">
+                <li><a href="#intro">Co je LoL?</a></li>
+                <li><a href="#modes">Režimy</a></li>
+                <li><a href="#spells">Kouzla</a></li>
+                <li><a href="#items">Předměty</a></li>
+                <li><a href="#roles">Role</a></li>
+                <li><a href="#regions">Regiony</a></li>
+                <li><a href="#champions">Šampioni</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Hero Banner -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>League of Legends: Kodex Šampionů</h1>
+            <p>Prozkoumejte každého šampiona, roli a příběh v moderním interaktivním katalogu.</p>
+            <div class="hero-buttons">
+                <a href="#intro" class="hero-btn">Začít</a>
+                <button id="random-champ-btn" class="hero-btn secondary">🎲 Náhodný šampion</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <main>
+        <section id="intro" class="section intro-section">
+            <div class="section-content" id="intro-content">
+                <!-- Intro content will be loaded via AJAX -->
+            </div>
+        </section>
+
+        <section id="modes" class="section modes-section">
+            <h2 class="section-title">Herní Režimy</h2>
+            <div class="modes-grid" id="modes-content">
+                <!-- Modes will be loaded via AJAX -->
+            </div>
+        </section>
+
+        <section id="spells" class="section spells-section">
+            <h2 class="section-title">Kouzla Vyvolávače</h2>
+            <div class="spells-grid" id="spells-content">
+                <!-- Spells will be loaded via AJAX -->
+            </div>
+        </section>
+
+        <section id="items" class="section items-section">
+            <h2 class="section-title">Legendární Zbrojnice</h2>
+
+            <!-- Inventory Builder -->
+            <div class="build-helper">
+                <p>Klikni na předmět a přidej ho do svého buildu:</p>
+                <div class="inventory-slots" id="inventory-display">
+                    <div class="inv-slot" data-index="0"></div>
+                    <div class="inv-slot" data-index="1"></div>
+                    <div class="inv-slot" data-index="2"></div>
+                    <div class="inv-slot" data-index="3"></div>
+                    <div class="inv-slot" data-index="4"></div>
+                    <div class="inv-slot" data-index="5"></div>
+                    <button id="clear-build" class="clear-btn" title="Vymazat build">🗑️</button>
+                </div>
+            </div>
+
+            <div class="items-grid" id="items-content">
+                <!-- Items will be loaded via AJAX -->
+            </div>
+        </section>
+
+        <section id="roles" class="section roles-section">
+            <h2 class="section-title">Role Šampionů</h2>
+            <div class="section-content" id="roles-content">
+                <!-- Roles will be loaded via AJAX -->
+            </div>
+        </section>
+
+        <section id="regions" class="section regions-section">
+            <h2 class="section-title">Regiony Runeterry</h2>
+            <div class="section-content" id="regions-content">
+                <!-- Regions will be loaded via AJAX -->
+            </div>
+        </section>
+
+        <section id="champions" class="section champions-section">
+            <h2 class="section-title">Galerie Šampionů</h2>
+
+            <!-- Filters -->
+            <div class="filters">
+                <input type="text" id="search-input" placeholder="Hledat šampiona..." />
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Vše</button>
+                    <button class="filter-btn" data-filter="Bojovník">Bojovník</button>
+                    <button class="filter-btn" data-filter="Mág">Mág</button>
+                    <button class="filter-btn" data-filter="Střelec">Střelec</button>
+                    <button class="filter-btn" data-filter="Tank">Tank</button>
+                    <button class="filter-btn" data-filter="Zabiják">Zabiják</button>
+                    <button class="filter-btn" data-filter="Podpora">Podpora</button>
+                    <button class="filter-btn special-filter" data-filter="favorites">❤️ Oblíbené</button>
+                </div>
+            </div>
+
+            <div class="champion-grid" id="champion-grid">
+                <!-- Champion cards will be injected here -->
+            </div>
+        </section>
+        <section id="quiz" class="section quiz-section">
+            <h2 class="section-title">Kvíz: Jaký jsi šampion?</h2>
+            <div class="quiz-container" id="quiz-container">
+                <div class="quiz-start">
+                    <p>Nevíš, koho si vybrat? Odpověz na pár otázek a zjisti, která role ti sedí nejlépe!</p>
+                    <button id="start-quiz-btn" class="hero-btn">Spustit Kvíz</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">Staň se Legendou</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Připoj se k nám</h3>
+                    <p>Máš dotaz ke kodexu nebo chceš nahlásit chybu? Vyplň formulář a my se ti ozveme dřív, než řekneš
+                        "Pentakill".</p>
+                    <div class="info-item">
+                        <span class="icon">✉️</span>
+                        <span>info@kodexsampionu.cz</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">🌍</span>
+                        <span>Runeterra, Ionia</span>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Jméno vyvolávače</label>
+                        <input type="text" id="name" name="name" required placeholder="Např. Faker">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Magický svitek (Email)</label>
+                        <input type="email" id="email" name="email" required placeholder="tvuj@email.cz">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Zpráva</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Napiš nám něco..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Odeslat Zprávu</button>
+                    <p class="form-status" id="form-status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kodex Šampionů</h3>
+                <p>Tvůj průvodce světem Runeterry. Objevuj příběhy, schopnosti a tajemství šampionů League of Legends.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Odkazy</h3>
+                <ul class="footer-links">
+                    <li><a href="#hero">Domů</a></li>
+                    <li><a href="#champions">Šampioni</a></li>
+                    <li><a href="#regions">Regiony</a></li>
+                    <li><a href="https://www.leagueoflegends.com" target="_blank">Oficiální stránka</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <p>Vytvořil s ❤️ Alexandr Šoška</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">X</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 League of Legends Champion Codex. Není oficiálním produktem Riot Games.</p>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Zpět nahoru">↑</button>
+
+    <!-- Modal for Champion Details -->
+    <div id="champion-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-wrapper">
+                    <img id="modal-image" src="" alt="Champion Image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-name"></h2>
+                    <p id="modal-title" class="champion-title"></p>
+                    <div id="modal-badges" class="champion-badges"></div>
+                    <div class="modal-desc-container">
+                        <p id="modal-desc"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Comparison Modal -->
+        <div id="compare-modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content compare-content">
+                <button class="close-btn">&times;</button>
+                <div class="compare-body">
+                    <div class="compare-side" id="compare-left">
+                        <!-- Injected via JS -->
+                    </div>
+                    <div class="compare-center">
+                        <div class="vs-badge">VS</div>
+                    </div>
+                    <div class="compare-side" id="compare-right">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Float Comparison Widget -->
+        <div id="compare-widget" class="compare-widget">
+            <div class="compare-slots">
+                <div class="c-slot" id="slot-1">?</div>
+                <span class="vs-text">VS</span>
+                <div class="c-slot" id="slot-2">?</div>
+            </div>
+            <button id="trigger-compare" disabled>Porovnat</button>
+            <button id="clear-compare" class="clear-btn">✖</button>
+        </div>
+
+        <!-- Audio Player -->
+        <audio id="bg-music" loop>
+            <source
+                src="https://assets.contentstack.io/v3/assets/blt2ac872571a60ee02/bltc3125087a4857b29/615a51988863675005b57223/Legends_Never_Die.mp3"
+                type="audio/mpeg">
+            tvůj prohlížeč nepodporuje audio.
+        </audio>
+
+        <div class="music-player" id="music-player">
+            <div class="bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="music-info">
+                <span class="music-title">Legends Never Die</span>
+                <span class="music-status">Klikni pro přehrání</span>
+            </div>
+            <div class="music-controls">
+                <button id="play-pause-btn">▶</button>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+</body>
+
+</html>

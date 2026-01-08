@@ -1,0 +1,24 @@
+{
+    "regions": [
+        {
+            "name": "Demacie",
+            "description": "Silné, zákonné království s prestižní vojenskou historií. Je ceněno pro svou spravedlnost, čest a povinnost, ale je také velmi uzavřené vůči magii."
+        },
+        {
+            "name": "Noxus",
+            "description": "Brutální expanzivní říše, kde kdokoli může povstat k moci bez ohledu na původ, pokud projeví potřebnou sílu a schopnosti."
+        },
+        {
+            "name": "Ionia",
+            "description": "Země nespoutané magie a duchovní rovnováhy. Její obyvatelé žijí v harmonii s přírodou, dokud nebyli napadeni Noxusem."
+        },
+        {
+            "name": "Freljord",
+            "description": "Drsná a nemilosrdná ledová země na severu, kde o přežití bojují kmeny v neustálé občanské válce."
+        },
+        {
+            "name": "Piltover & Zaun",
+            "description": "Dvě propojená města: Piltover je prosperující město pokroku, zatímco Zaun je jeho temným, chemickým odrazem v hlubinách."
+        }
+    ]
+}

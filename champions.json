@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Ahri",
+        "role": "Mid",
+        "image": "https://static.wikia.nocookie.net/leagueoflegends/images/9/9c/Ahri_OriginalSquare.png",
+        "shortDescription": "A mage assassin with mobility and charm.",
+        "fullDescription": "Ahri is a nine‑tailed fox who uses her magical orbs to damage enemies and can charm them to walk towards her. She excels at burst damage and outplay potential."
+    },
+    {
+        "name": "Garen",
+        "role": "Top",
+        "image": "https://static.wikia.nocookie.net/leagueoflegends/images/5/5c/Garen_OriginalSquare.png",
+        "shortDescription": "A durable fighter with strong sustain.",
+        "fullDescription": "Garen is a proud Demacian warrior who relies on his resilience and powerful spin‑to‑win ultimate. He is straightforward to play and excels at staying alive in fights."
+    },
+    {
+        "name": "Lux",
+        "role": "Mid",
+        "image": "https://static.wikia.nocookie.net/leagueoflegends/images/5/5d/Lux_OriginalSquare.png",
+        "shortDescription": "A long‑range mage with crowd control.",
+        "fullDescription": "Lux harnesses light magic to damage and blind enemies from afar. Her ultimate can turn the tide of battles with a massive burst of damage."
+    }
+]

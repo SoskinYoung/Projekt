@@ -1,0 +1,70 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "text": "Jaký je tvůj styl boje?",
+            "answers": [
+                {
+                    "text": "Hrr na ně! Útok je nejlepší obrana.",
+                    "role": "Bojovník"
+                },
+                {
+                    "text": "Raději stojím vzadu a ničím je z dálky.",
+                    "role": "Střelec"
+                },
+                {
+                    "text": "Chráním své přátele a léčím je.",
+                    "role": "Podpora"
+                },
+                {
+                    "text": "Čekám ve stínech na správný moment.",
+                    "role": "Zabiják"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "Co je pro tebe v bitvě nejdůležitější?",
+            "answers": [
+                {
+                    "text": "Přežít všechno a být nezničitelná zeď.",
+                    "role": "Tank"
+                },
+                {
+                    "text": "Způsobit obrovské poškození jedním kouzlem.",
+                    "role": "Mág"
+                },
+                {
+                    "text": "Být všude a nikdy nebýt chycen.",
+                    "role": "Zabiják"
+                },
+                {
+                    "text": "Spolupráce a kontrola bojiště.",
+                    "role": "Podpora"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "Která zbraň se ti líbí nejvíc?",
+            "answers": [
+                {
+                    "text": "Obrovský meč nebo sekera.",
+                    "role": "Bojovník"
+                },
+                {
+                    "text": "Magická hůl nebo kniha.",
+                    "role": "Mág"
+                },
+                {
+                    "text": "Luk, kuše nebo puška.",
+                    "role": "Střelec"
+                },
+                {
+                    "text": "Štít a brnění.",
+                    "role": "Tank"
+                }
+            ]
+        }
+    ]
+}

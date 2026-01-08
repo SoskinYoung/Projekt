@@ -1,0 +1,28 @@
+{
+    "modes": [
+        {
+            "name": "Vyvolávačův Žleb (Summoner's Rift)",
+            "players": "5v5",
+            "description": "Klasický a nejpopulárnější režim. Tři linky, džungle, epická monstra a cíl zničit nepřátelský Nexus.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg"
+        },
+        {
+            "name": "Kvílející Propast (ARAM)",
+            "players": "5v5",
+            "description": "All Random All Mid. Jedna linka, náhodní šampioni, neustálý boj bez možnosti návratu na základnu.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg"
+        },
+        {
+            "name": "TFT (Teamfight Tactics)",
+            "players": "8 hráčů (Free-for-All)",
+            "description": "Strategická hra, kde budujete tým šampionů, kteří bojují automaticky. Šachy ze světa LoL.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pengu_Cosplay_Tristana_0.jpg"
+        },
+        {
+            "name": "Aréna",
+            "players": "2v2v2v2",
+            "description": "Rychlý režim, kde dvojice bojují v kolech na různých mapách s unikátními vylepšeními.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg"
+        }
+    ]
+}

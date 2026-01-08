@@ -1,0 +1,52 @@
+{
+    "items": [
+        {
+            "name": "Nekonečno (Infinity Edge)",
+            "type": "Poškození",
+            "cost": 3400,
+            "stats": "+70 útok, +20% kritická šance",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3031.png",
+            "description": "Masivně zvyšuje poškození kritických zásahů. Povinnost pro každého střelce."
+        },
+        {
+            "name": "Rabadonův Smrtící Klobouk",
+            "type": "Magie",
+            "cost": 3600,
+            "stats": "+120 síla schopností",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3089.png",
+            "description": "Zvyšuje celkovou sílu schopností o 35%. Nejlepší přítel mágů."
+        },
+        {
+            "name": "Zhonya's Hourglass",
+            "type": "Obrana",
+            "cost": 2600,
+            "stats": "+65 AP, +45 brnění",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3157.png",
+            "description": "Aktivovatelné: Stanete se na 2.5 sekundy nezranitelnými, ale nemůžete se hýbat."
+        },
+        {
+            "name": "Trinity Force",
+            "type": "Bojovník",
+            "cost": 3333,
+            "stats": "+35 útok, +30% rychlost útoku, +200 zdraví",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3078.png",
+            "description": "Tuny poškození! Ideální pro šampiony, kteří střídají útoky a schopnosti."
+        },
+        {
+            "name": "Warmog's Armor",
+            "type": "Tank",
+            "cost": 3000,
+            "stats": "+800 zdraví, +10 zrychlení schopností",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3083.png",
+            "description": "Pokud máte alespoň 1100 bonusového zdraví, regenerujete masivně zdraví mimo boj."
+        },
+        {
+            "name": "Botrk (Blade of the Ruined King)",
+            "type": "Poškození",
+            "cost": 3300,
+            "stats": "+40 útok, +25% rychlost útoku, +8% lifesteal",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/3153.png",
+            "description": "Způsobuje poškození podle aktuálního zdraví cíle. Ničitel tanků."
+        }
+    ]
+}

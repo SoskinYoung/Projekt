@@ -1,0 +1,34 @@
+{
+    "roles": [
+        {
+            "role": "Mág (Mage)",
+            "description": "Mágové používají mocná kouzla k ničení nepřátel na dálku. Vynikají v plošném poškození a kontrole davu.",
+            "icon": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/5443.png"
+        },
+        {
+            "role": "Bojovník (Fighter)",
+            "description": "Bojovníci jsou mistři boje zblízka. Mají vyvážený poměr útoku a obrany a vyhledávají duely.",
+            "icon": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/5445.png"
+        },
+        {
+            "role": "Střelec (Marksman)",
+            "description": "Střelci způsobují obrovské fyzické poškození na dálku, ale jsou velmi křehcí a potřebují ochranu.",
+            "icon": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/5444.png"
+        },
+        {
+            "role": "Zabiják (Assassin)",
+            "description": "Zabijáci se specializují na rychlou eliminaci klíčových cílů. Mají vysokou pohyblivost a nárazové poškození.",
+            "icon": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/5442.png"
+        },
+        {
+            "role": "Tank",
+            "description": "Tanci jsou nesmírně odolní. Chrání svůj tým, iniciují boje a absorbují poškození místo ostatních.",
+            "icon": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/5446.png"
+        },
+        {
+            "role": "Podpora (Support)",
+            "description": "Podpory pomáhají týmu léčením, štíty nebo kontrolou nepřátel. Zajišťují vizi na mapě.",
+            "icon": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/5447.png"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "spells": [
+        {
+            "name": "Skok (Flash)",
+            "cooldown": "300s",
+            "description": "Teleportuje vašeho šampiona na krátkou vzdálenost směrem ke kurzoru.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerFlash.png"
+        },
+        {
+            "name": "Vyléčit (Heal)",
+            "cooldown": "240s",
+            "description": "Obnoví zdraví vám a nejbližšímu spojenci a krátce zvýší rychlost pohybu.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerHeal.png"
+        },
+        {
+            "name": "Vznítit (Ignite)",
+            "cooldown": "180s",
+            "description": "Zapálí nepřítele, způsobí mu poškození v čase a sníží jeho léčení.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerDot.png"
+        },
+        {
+            "name": "Teleport",
+            "cooldown": "360s",
+            "description": "Po krátkém vyvolávání se teleportujete k přátelské věži, poskokovi nebo wardě.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerTeleport.png"
+        },
+        {
+            "name": "Udeřit (Smite)",
+            "cooldown": "15s",
+            "description": "Způsobí přímé poškození monstrům v džungli. Nezbytnost pro džunglery.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerSmite.png"
+        },
+        {
+            "name": "Bariéra",
+            "cooldown": "180s",
+            "description": "Vytvoří štít, který vás na 2 sekundy ochrání před poškozením.",
+            "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/SummonerBarrier.png"
+        }
+    ]
+}
