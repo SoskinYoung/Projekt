@@ -30,7 +30,6 @@
             </ul>
         </nav>
     </header>
-    <!-- Hero Banner -->
     <section class="hero" id="hero">
         <div class="hero-content">
             <h1>League of Legends: Kodex Šampionů</h1>
@@ -48,28 +47,24 @@
     <main>
         <section id="intro" class="section intro-section">
             <div class="section-content" id="intro-content">
-                <!-- Intro content will be loaded via AJAX -->
             </div>
         </section>
 
         <section id="modes" class="section modes-section">
             <h2 class="section-title">Herní Režimy</h2>
             <div class="modes-grid" id="modes-content">
-                <!-- Modes will be loaded via AJAX -->
             </div>
         </section>
 
         <section id="spells" class="section spells-section">
             <h2 class="section-title">Kouzla Vyvolávače</h2>
             <div class="spells-grid" id="spells-content">
-                <!-- Spells will be loaded via AJAX -->
             </div>
         </section>
 
         <section id="items" class="section items-section">
             <h2 class="section-title">Legendární Zbrojnice</h2>
 
-            <!-- Inventory Builder -->
             <div class="build-helper">
                 <p>Klikni na předmět a přidej ho do svého buildu:</p>
                 <div class="inventory-slots" id="inventory-display">
@@ -84,28 +79,24 @@
             </div>
 
             <div class="items-grid" id="items-content">
-                <!-- Items will be loaded via AJAX -->
             </div>
         </section>
 
         <section id="roles" class="section roles-section">
             <h2 class="section-title">Role Šampionů</h2>
             <div class="section-content" id="roles-content">
-                <!-- Roles will be loaded via AJAX -->
             </div>
         </section>
 
         <section id="regions" class="section regions-section">
             <h2 class="section-title">Regiony Runeterry</h2>
             <div class="section-content" id="regions-content">
-                <!-- Regions will be loaded via AJAX -->
             </div>
         </section>
 
         <section id="champions" class="section champions-section">
             <h2 class="section-title">Galerie Šampionů</h2>
 
-            <!-- Filters -->
             <div class="filters">
                 <input type="text" id="search-input" placeholder="Hledat šampiona..." />
                 <div class="filter-buttons">
@@ -121,7 +112,6 @@
             </div>
 
             <div class="champion-grid" id="champion-grid">
-                <!-- Champion cards will be injected here -->
             </div>
         </section>
         <section id="quiz" class="section quiz-section">
@@ -201,10 +191,8 @@
             <p>© 2025 League of Legends Champion Codex. Není oficiálním produktem Riot Games.</p>
         </div>
     </footer>
-    <!-- Back to Top Button -->
     <button id="back-to-top" aria-label="Zpět nahoru">↑</button>
 
-    <!-- Modal for Champion Details -->
     <div id="champion-modal" class="modal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
@@ -223,26 +211,22 @@
                 </div>
             </div>
         </div>
-        <!-- Comparison Modal -->
         <div id="compare-modal" class="modal">
             <div class="modal-overlay"></div>
             <div class="modal-content compare-content">
                 <button class="close-btn">&times;</button>
                 <div class="compare-body">
                     <div class="compare-side" id="compare-left">
-                        <!-- Injected via JS -->
                     </div>
                     <div class="compare-center">
                         <div class="vs-badge">VS</div>
                     </div>
                     <div class="compare-side" id="compare-right">
-                        <!-- Injected via JS -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Float Comparison Widget -->
         <div id="compare-widget" class="compare-widget">
             <div class="compare-slots">
                 <div class="c-slot" id="slot-1">?</div>
@@ -253,7 +237,6 @@
             <button id="clear-compare" class="clear-btn">✖</button>
         </div>
 
-        <!-- Audio Player -->
         <audio id="bg-music" loop>
             <source
                 src="https://assets.contentstack.io/v3/assets/blt2ac872571a60ee02/bltc3125087a4857b29/615a51988863675005b57223/Legends_Never_Die.mp3"
@@ -279,5 +262,6 @@
 
         <script src="app.js"></script>
 </body>
+
 
 </html>
