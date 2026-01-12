@@ -144,10 +144,10 @@ function renderChampionsGrid(champions) {
     return `
     <div class="champion-card visible" data-name="${champ.name}">
       <button class="compare-btn ${compareClass}" aria-label="Porovnat" title="Porovnat">
-        ⚔️
+        
       </button>
       <button class="fav-btn ${favClass}" aria-label="Přidat k oblíbeným">
-        ❤️
+        
       </button>
       <div class="card-image-container">
         <img src="${champ.image}" alt="${champ.name}" onerror="${fallbackImage}">
@@ -739,7 +739,7 @@ function initMusicPlayer() {
   btn.addEventListener('click', () => {
     if (audio.paused) {
       audio.play().then(() => {
-        btn.textContent = '⏸';
+        btn.textContent = 'start';
         player.classList.add('playing');
         status.textContent = 'Hraje se...';
       }).catch(err => {
@@ -748,7 +748,7 @@ function initMusicPlayer() {
       });
     } else {
       audio.pause();
-      btn.textContent = '▶';
+      btn.textContent = 'pauze';
       player.classList.remove('playing');
       status.textContent = 'Pozastaveno';
     }
@@ -915,7 +915,7 @@ function initEasterEgg() {
 }
 
 function activateUrfMode() {
-  alert('🚀 URF MODE ACTIVATED! 🚀\nCooldowny zrušeny! (Jen vizuálně)');
+  alert(' URF MODE ACTIVATED! \nCooldowny zrušeny! (Jen vizuálně)');
   document.body.style.animation = 'rainbow-bg 5s infinite';
 
   const style = document.createElement('style');
@@ -950,5 +950,6 @@ if (backToTopBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
 
 
